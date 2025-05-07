@@ -1,10 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const Card = ({ title, cover }) => (
-  <div className="card">
-    <img src={cover} alt={title} className="card-image" />
-    <h3 className="card-title">{title}</h3>
-  </div>
-)
+const Card = ({ id, title, cover }) => {
+  return (
+    <div className="card">
+      <Link to={`/logement/${id}`}>
+        <img src={cover} alt={title} className="card-img" />
+        <h2>{title}</h2>
+      </Link>
+    </div>
+  );
+};
 
-export default Card
+export default Card;

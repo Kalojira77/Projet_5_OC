@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react';
+import { LogementContext } from '../context/LogementContext';
 import Banner from '../components/Banner'
 import Card from '../components/Card'
 import bannerHome from '../assets/banner-home.jpg'
 
 const Home = () => {
-  const [logements, setLogements] = useState([])
+  const { logements, isLoading, error } = useContext(LogementContext);
 
-  useEffect(() => {
-    const fetchLogements = async () => {
-      try {
-        const response = await fetch('/data/logements.json')
-        const data = await response.json()
-        setLogements(data)
-      } catch (error) {
-        console.error('Erreur de chargement des données :', error)
-      }
-    }
+  if (isLoading) {
+    return <div>Chargement en cours...</div>;
+  }
 
-    fetchLogements()
-  }, [])
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div>
@@ -30,6 +25,7 @@ const Home = () => {
             key={logement.id}
             title={logement.title}
             cover={logement.cover}
+            id={logement.id}
           />
         ))}
       </div>

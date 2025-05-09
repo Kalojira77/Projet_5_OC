@@ -1,6 +1,11 @@
 import React, { useContext } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { LogementContext } from '../context/LogementContext';
+import Equipements from '../components/Equipements';
+import Tags from '../components/Tags';
+import Rating from '../components/Notation';
+import Host from '../components/Profil';
+
 
 const Logement = () => {
   const { id } = useParams();
@@ -29,26 +34,11 @@ const Logement = () => {
     <div className="logement-page">
       <h1>{logement.title}</h1>
       <img src={logement.cover} alt={logement.title} />
+      <Rating rating={parseInt(logement.rating)} />
+      <Host name={logement.host.name} picture={logement.host.picture} />
       <p>{logement.description}</p>
-
-      {/* Liste des équipements */}
-      <div className="equipements">
-        <h2>Équipements</h2>
-        <ul>
-          {logement.equipments.map((equipment, index) => (
-            <li key={index}>{equipment}</li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Tags du logement */}
-      <div className="tags">
-        {logement.tags.map((tag, index) => (
-          <span key={index} className="tag">
-            {tag}
-          </span>
-        ))}
-      </div>
+      <Equipements items={logement.equipments} />
+      <Tags tags={logement.tags} />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { LogementContext } from '../context/LogementContext';
 import Banner from '../components/Banner'
 import Card from '../components/Card'
-import bannerHome from '../assets/banner-home.jpg'
+
 
 const Home = () => {
   const { logements, isLoading, error } = useContext(LogementContext);
@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <div>
-      <Banner image={bannerHome} text="Chez vous, partout et ailleurs" />
+      <Banner home />
       <h1>Page d'accueil</h1>
       <div className="card-container">
         {logements.map(logement => (

@@ -3,7 +3,7 @@ import { LogementProvider } from './context/LogementContext';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Logement from "./pages/Logement";
-import Error404 from "./pages/Error404";
+import Error from "./pages/Error";
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/logement/:id" element={<Logement />} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
       </BrowserRouter>

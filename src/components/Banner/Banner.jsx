@@ -1,7 +1,7 @@
 import React from 'react';
 // import './Banner.css';
-import homeImage from '../assets/banner-home.jpg';
-import aboutImage from '../assets/banner-about.jpg';
+import homeImage from '../../assets/banner-home.jpg';
+import aboutImage from '../../assets/banner-about.jpg';
 
 function Banner({ home = false, about = false }) {
   let image = '';

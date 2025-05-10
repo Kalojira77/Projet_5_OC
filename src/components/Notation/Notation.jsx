@@ -1,6 +1,6 @@
 import React from 'react';
-import fullStar from '../assets/star-full.svg';
-import emptyStar from '../assets/star-empty.svg';
+import fullStar from '../../assets/star-full.svg';
+import emptyStar from '../../assets/star-empty.svg';
 
 function Rating({ rating }) {
   const stars = [];

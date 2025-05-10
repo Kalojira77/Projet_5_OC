@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { LogementContext } from '../context/LogementContext';
-import Equipements from '../components/Equipements';
-import Tags from '../components/Tags';
-import Rating from '../components/Notation';
-import Host from '../components/Profil';
+import { LogementContext } from '../../context/LogementContext';
+import Equipements from '../../components/Equipements';
+import Tags from '../../components/Tags';
+import Rating from '../../components/Notation';
+import Host from '../../components/Profil';
+import Carousel from '../../components/Galerie';
 
 
 const Logement = () => {
@@ -33,7 +34,7 @@ const Logement = () => {
   return (
     <div className="logement-page">
       <h1>{logement.title}</h1>
-      <img src={logement.cover} alt={logement.title} />
+      <Carousel pictures={logement.pictures} title={logement.title}/>
       <Rating rating={parseInt(logement.rating)} />
       <Host name={logement.host.name} picture={logement.host.picture} />
       <p>{logement.description}</p>

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { LogementContext } from '../../context/LogementContext';
-import Banner from '../../components/Banner/'
-import Card from '../../components/Card/'
+import { Banner, Card } from '../../components'
 
 
 const Home = () => {

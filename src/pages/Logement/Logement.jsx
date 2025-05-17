@@ -1,11 +1,17 @@
+// import React, { useContext } from 'react';
+// import { useParams, Navigate } from 'react-router-dom';
+// import { LogementContext } from '../../context/LogementContext';
+// import Equipements from '../../components/Equipements/indexo';
+// import Tags from '../../components/Tags/indexo';
+// import Rating from '../../components/Notation/indexo';
+// import Host from '../../components/Profil/indexo';
+// import Carousel from '../../components/Galerie/indexo';
+
 import React, { useContext } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { LogementContext } from '../../context/LogementContext';
-import Equipements from '../../components/Equipements';
-import Tags from '../../components/Tags';
-import Rating from '../../components/Notation';
-import Host from '../../components/Profil';
-import Carousel from '../../components/Galerie';
+import { Collapse, Tags, Notation, Profil, Galerie } from '../../components';
+
 
 
 const Logement = () => {
@@ -34,11 +40,24 @@ const Logement = () => {
   return (
     <div className="logement-page">
       <h1>{logement.title}</h1>
-      <Carousel pictures={logement.pictures} title={logement.title}/>
-      <Rating rating={parseInt(logement.rating)} />
-      <Host name={logement.host.name} picture={logement.host.picture} />
-      <p>{logement.description}</p>
-      <Equipements items={logement.equipments} />
+      <Galerie pictures={logement.pictures} title={logement.title}/>
+      <Notation rating={parseInt(logement.rating)} />
+      <Profil name={logement.host.name} picture={logement.host.picture} />
+
+      <Collapse title="Description">
+        <p>{logement.description}</p>
+      </Collapse>
+      <Collapse title="Équipements">
+        <ul>
+          {logement.equipments.map((equipement, index) => (
+            <li key={index}>{equipement}</li>
+          ))}
+        </ul>
+      </Collapse>
+
+
+      {/* <p>{logement.description}</p>
+      <Equipements items={logement.equipments} /> */}
       <Tags tags={logement.tags} />
     </div>
   );

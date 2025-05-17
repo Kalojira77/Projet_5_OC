@@ -1,0 +1,44 @@
+.collapse {
+  margin-bottom: 1rem;
+
+  .collapse-header {
+    all: unset; // enlève les styles par défaut du bouton
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+      user-select: none;
+    }
+  }
+
+  .arrow-icon {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+    user-select: none;
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  .collapse-content {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-left: 2px solid #007bff;
+    background-color: #fafafa;
+    border-radius: 0 0 4px 4px;
+    font-size: 1rem;
+    color: #333;
+  }
+}

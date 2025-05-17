@@ -1,9 +1,9 @@
-export { default as Banner } from './Banner';
-export { default as Card } from './Card';
-export { default as Tags } from './Tags';
-export { default as Notation } from './Notation';
-export { default as Header } from './Header';
-export { default as Galerie } from './Galerie';
-export { default as Footer } from './Footer';
-export { default as Equipements } from './Equipements';
-// export { default as Description } from './Description';
+export { default as Banner } from './Banner/Banner';
+export { default as Card } from './Card/Card';
+export { default as Tags } from './Tags/Tags';
+export { default as Notation } from './Notation/Notation';
+export { default as Header } from './Header/Header';
+export { default as Profil } from './Profil/Profil';
+export { default as Galerie } from './Galerie/Galerie';
+export { default as Footer } from './Footer/Footer';
+export { default as Collapse } from './Collapse/Collapse';

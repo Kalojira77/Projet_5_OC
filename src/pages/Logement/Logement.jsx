@@ -1,12 +1,3 @@
-// import React, { useContext } from 'react';
-// import { useParams, Navigate } from 'react-router-dom';
-// import { LogementContext } from '../../context/LogementContext';
-// import Equipements from '../../components/Equipements/indexo';
-// import Tags from '../../components/Tags/indexo';
-// import Rating from '../../components/Notation/indexo';
-// import Host from '../../components/Profil/indexo';
-// import Carousel from '../../components/Galerie/indexo';
-
 import React, { useContext } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { LogementContext } from '../../context/LogementContext';
@@ -18,8 +9,8 @@ const Logement = () => {
   const { id } = useParams();
   const { logements, isLoading, error } = useContext(LogementContext);
 
-  console.log("ID du logement :", id);  // Vérifier l'ID dans l'URL
-  console.log("Liste des logements :", logements);  // Vérifier les logements récupérés
+  console.log("ID du logement :", id); 
+  console.log("Liste des logements :", logements); 
 
   if (isLoading) {
     return <div>Chargement en cours...</div>;
@@ -29,10 +20,8 @@ const Logement = () => {
     return <div>{error}</div>;
   }
 
-  // Trouver le logement qui correspond à l'ID
   const logement = logements.find((item) => item.id === id);
 
-  // Si pas trouvé, rediriger vers la page d'erreur
   if (!logement) {
     return <Navigate to="/error" />;
   }
@@ -54,10 +43,6 @@ const Logement = () => {
           ))}
         </ul>
       </Collapse>
-
-
-      {/* <p>{logement.description}</p>
-      <Equipements items={logement.equipments} /> */}
       <Tags tags={logement.tags} />
     </div>
   );

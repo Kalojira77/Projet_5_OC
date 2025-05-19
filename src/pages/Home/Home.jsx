@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { LogementContext } from '../../context/LogementContext';
 import { Banner, Card } from '../../components'
+import './Home.scss';
 
 
 const Home = () => {

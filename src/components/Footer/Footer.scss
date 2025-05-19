@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.footer {
+  background-color: $color-secondary; 
+  color: $color-tertiary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+  font-size: 0.875rem;
+  user-select: none;
+
+  .logo-footer {
+    width: 100px;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+
+    .logo-footer {
+      margin-bottom: 0;
+    }
+  }
+}

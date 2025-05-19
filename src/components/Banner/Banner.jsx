@@ -1,28 +1,30 @@
 import React from 'react';
-// import './Banner.css';
 import homeImage from '../../assets/banner-home.jpg';
 import aboutImage from '../../assets/banner-about.jpg';
+import './Banner.scss';
 
-function Banner({ home = false, about = false }) {
-  let image = '';
-  let text = '';
+const images = {
+  home: {
+    src: homeImage,
+    alt: 'Bannière d’accueil avec paysage',
+    text: 'Chez vous, partout et ailleurs',
+  },
+  about: {
+    src: aboutImage,
+    alt: 'Bannière à propos avec montagnes',
+    text: '', 
+  },
+};
 
-  if (home) {
-    image = homeImage;
-    text = 'Chez vous, partout et ailleurs';
-  } else if (about) {
-    image = aboutImage;
-    text = "Ceci n'est pas un texte";
-  } else {
-    image = homeImage;
-    text = '';
-  }
+const Banner = ({ page = 'home' }) => {
+  const { src, alt, text } = images[page] || images.home;
 
   return (
-    <div className="banner" style={{ backgroundImage: `url(${image})` }}>
+    <div className="banner">
+      <img src={src} alt={alt} className="banner-img" />
       {text && <h1 className="banner-text">{text}</h1>}
     </div>
   );
-}
+};
 
 export default Banner;

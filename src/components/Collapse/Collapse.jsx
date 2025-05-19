@@ -4,22 +4,23 @@ import './Collapse.scss';
 
 const Collapse = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const id = useId();  // génère un id stable unique pour cette instance
+  const id = useId();
 
   const toggleCollapse = () => setIsOpen(prev => !prev);
 
   return (
     <div className="collapse">
       <button
+        type="button"
         className="collapse-header"
         onClick={toggleCollapse}
         aria-expanded={isOpen}
         aria-controls={`collapse-content-${id}`}
       >
-        <h2>{title}</h2>
+        <span className="collapse-title">{title}</span>
         <img
           src={Arrow}
-          alt={isOpen ? 'Fermer' : 'Ouvrir'}
+          alt={isOpen ? `Réduire la section ${title}` : `Déployer la section ${title}`}
           className={`arrow-icon ${isOpen ? 'open' : ''}`}
         />
       </button>

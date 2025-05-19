@@ -1,0 +1,42 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; // centre les cartes si moins de 3 sur une ligne
+  gap: 30px;
+
+  > * {
+    flex: 0 1 calc((100% - 60px) / 3); // 3 cartes par ligne, en tenant compte des gaps
+    max-width: calc((100% - 60px) / 3);
+    max-height: 350px; // hauteur max pour limiter la taille verticale
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      outline: none;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-container > * {
+    flex: 0 1 calc((100% - 30px) / 2); 
+    max-width: calc((100% - 30px) / 2);
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container > * {
+    flex: 1 1 100%; 
+    max-width: 100%;
+    max-height: none; 
+  }
+}

@@ -1,26 +1,19 @@
 import React, { useContext } from 'react';
 import { LogementContext } from '../../context/LogementContext';
-import { Banner, Card } from '../../components'
+import { Banner, Card } from '../../components';
 import './Home.scss';
-
 
 const Home = () => {
   const { logements, isLoading, error } = useContext(LogementContext);
 
-  if (isLoading) {
-    return <div>Chargement en cours...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
+  if (isLoading) return <p>Chargement en cours...</p>;
+  if (error) return <p className="error">{error}</p>;
 
   return (
-    <div>
+    <main className="home">
       <Banner home />
-      <h1>Page d'accueil</h1>
-      <div className="card-container">
-        {logements.map(logement => (
+      <section className="card-container" aria-label="Liste des logements">
+        {logements.map((logement) => (
           <Card
             key={logement.id}
             title={logement.title}
@@ -28,9 +21,9 @@ const Home = () => {
             id={logement.id}
           />
         ))}
-      </div>
-    </div>
-  )
-}
+      </section>
+    </main>
+  );
+};
 
-export default Home
+export default Home;

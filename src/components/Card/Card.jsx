@@ -1,14 +1,17 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './Card.scss';
 
 const Card = ({ id, title, cover }) => {
   return (
-    <div className="card">
-      <Link to={`/logement/${id}`}>
-        <img src={cover} alt={title} className="card-img" />
-        <h2>{title}</h2>
+    <article className="card">
+      <Link to={`/logement/${id}`} aria-label={`Voir le logement : ${title}`}>
+        <img src={cover} alt={`Image du logement : ${title}`} className="card-img" />
+        <div className="card-title">
+          <h2>{title}</h2>
+        </div>
       </Link>
-    </div>
+    </article>
   );
 };
 

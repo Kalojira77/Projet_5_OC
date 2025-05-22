@@ -1,13 +1,12 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg'; 
-import { Link } from 'react-router-dom';
 // import './Header.scss';
 
 
 function Header() {
     return (
       <header className="header">
-        <Link to="/"><img src={logo} alt="Kasa" className="logo"/></Link>
+        <Link to="/" aria-label="Retour à l'accueil"><img src={logo} alt="Logo de Kasa" className="logo"/></Link>
 
         <nav className='navbar'>
         <NavLink className={({ isActive }) => isActive ? "navbar__link--active" : "navbar__link"} to="/">

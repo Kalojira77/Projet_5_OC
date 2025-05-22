@@ -20,7 +20,7 @@ const Banner = ({ page = 'home' }) => {
   const { src, alt, text } = images[page] || images.home;
 
   return (
-    <div className="banner">
+    <div className="banner" role='img' aria-label={alt}>
       <img src={src} alt={alt} className="banner-img" />
       {text && <h1 className="banner-text">{text}</h1>}
     </div>

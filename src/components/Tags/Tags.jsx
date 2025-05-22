@@ -2,13 +2,13 @@ import React from 'react';
 
 function Tags({ tags }) {
   return (
-    <div className="tags">
+    <ul className="tags">
       {tags.map((tag, index) => (
-        <span key={index} className="tag">
+        <li key={index} className="tag">
           {tag}
-        </span>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

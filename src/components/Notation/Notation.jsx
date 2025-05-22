@@ -10,13 +10,14 @@ function Rating({ rating }) {
       <img
         key={i}
         src={i <= rating ? fullStar : emptyStar}
-        alt={i <= rating ? 'Étoile pleine' : 'Étoile vide'}
+        alt=''
+        aria-hidden="true"
         className="star"
       />
     );
   }
 
-  return <div className="rating">{stars}</div>;
+  return <div className="rating" aria-label={`Note : ${rating} sur 5`}>{stars}</div>;
 }
 
 export default Rating;

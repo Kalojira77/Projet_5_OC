@@ -2,10 +2,11 @@ import React from 'react';
 
 function Host({ name, picture }) {
   return (
-    <div className="host">
+    <article className="host">
       <p className="host-name">{name}</p>
-      <img src={picture} alt={`Portrait de ${name}`} className="host-picture" />
-    </div>
+      <img src={picture} alt='' className="host-picture" role="img"
+        aria-label={`Portrait de ${name}`}/>
+    </article>
   );
 }
 

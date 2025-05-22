@@ -1,0 +1,52 @@
+@import '../../styles/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 100px;
+
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
+
+  .logo {
+    height: 68px;
+    width: auto;
+
+    @media screen and (max-width: 768px) {
+      height: 46px;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    gap: 57px;
+
+    @media screen and (max-width: 768px) {
+      gap: 20px;
+    }
+
+    // Lien par défaut, visité, actif
+    &__link,
+    &__link:visited,
+    &__link--active,
+    &__link--active:visited {
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 500;
+      color: #000;
+
+      @media screen and (max-width: 768px) {
+        font-size: 12px;
+        text-transform: uppercase; // MAJUSCULES en mobile
+      }
+    }
+
+    &__link:hover,
+    &__link--active {
+      text-decoration: underline;
+      text-decoration-color: #000;
+    }
+  }
+}

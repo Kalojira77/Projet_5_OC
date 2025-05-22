@@ -2,17 +2,17 @@
 
 .card {
   width: 100%;
-  aspect-ratio: 1 / 1; // carré
+  aspect-ratio: 1 / 1; 
+  max-width: 335px;
+  height: 335px; // taille desktop
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  @media screen and (max-width: 768px) {
+    height: 255px; // taille mobile
   }
 
   a {
@@ -22,6 +22,7 @@
     text-decoration: none;
     color: inherit;
     position: relative;
+    cursor: pointer;
   }
 
   .card-img {
@@ -35,21 +36,27 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    margin: 0;
-    padding: 0px 15px;
     width: 100%;
-    color: $color-tertiary;
+    padding: 15px;
     background: linear-gradient(
       to top,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(4, 4, 4, 0.5) 40%,
-    rgba(10, 10, 10, 0.3) 70%,
-    transparent 100%
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.2) 70%,
+      transparent 100%
     );
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    color: $color-tertiary;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: flex-end;
+    height: 100px; // hauteur fixe du bandeau (titre + dégradé)
   }
 
+  // Empêche le h2 d’avoir une marge par défaut
+  .card-title h2 {
+    margin: 0;
+    font-size: 15px;
   }
+}

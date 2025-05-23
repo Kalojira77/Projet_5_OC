@@ -9,9 +9,6 @@ const Logement = () => {
   const { id } = useParams();
   const { logements, isLoading, error } = useContext(LogementContext);
 
-  console.log("ID du logement :", id); 
-  console.log("Liste des logements :", logements); 
-
   if (isLoading) {
     return <div>Chargement en cours...</div>;
   }
@@ -38,8 +35,8 @@ const Logement = () => {
       </Collapse>
       <Collapse title="Équipements">
         <ul>
-          {logement.equipments.map((equipement, index) => (
-            <li key={index}>{equipement}</li>
+          {logement.equipments.map((equipement) => (
+            <li key={`${logement.id}-${equipement}`}>{equipement}</li>
           ))}
         </ul>
       </Collapse>

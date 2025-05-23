@@ -43,10 +43,9 @@
       }
     }
 
-    &__link:hover,
     &__link--active {
       text-decoration: underline;
-      text-decoration-color: #000;
+      cursor: default;
     }
   }
 }

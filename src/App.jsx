@@ -4,7 +4,6 @@ import { Home, About, Logement, Error } from "./pages";
 import { Header, Footer } from './components';
 
 function App() {
-  console.log("App rendu !");
   return (
     <>
       <LogementProvider>

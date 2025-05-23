@@ -6,21 +6,24 @@ const useFetchAbout = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/data/about.json")
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data/about.json");
+
         if (!response.ok) {
           throw new Error("Erreur de chargement des données About");
         }
-        return response.json();
-      })
-      .then((data) => {
+
+        const data = await response.json();
         setAboutData(data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         setError(err.message);
-        setIsLoading(false);
-      });
+      } finally {
+        setIsLoading(false); 
+      }
+    };
+
+    fetchData();
   }, []);
 
   return { aboutData, isLoading, error };

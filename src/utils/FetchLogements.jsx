@@ -4,8 +4,8 @@ export async function fetchLogements() {
       if (!response.ok) {
         throw new Error('Erreur lors de la récupération des logements');
       }
-      const data = await response.json();
-      return data;
+      const logementsData = await response.json();
+      return logementsData;
     } catch (error) {
       console.error('Erreur fetchLogements :', error);
       throw error;

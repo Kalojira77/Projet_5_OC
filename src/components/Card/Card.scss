@@ -1,74 +1,96 @@
 @import '../../styles/variables.scss';
 
-.card {
-  width: 100%;
-  aspect-ratio: 1 / 1; 
-  max-width: 335px;
-  height: 335px; 
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  padding: 50px;
+  justify-content: flex-start; 
 
-    &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  a {
+    flex: 1 1 calc(33.333% - 20px); 
+    max-width: calc(33.333% - 20px);
+    text-decoration: none; 
+    color: inherit;
+    display: block;
   }
 
-  .card-img {
-    transition: filter 0.3s ease;
-  }
-
-  &:hover .card-img {
-    filter: brightness(1.05);
+  @media screen and (max-width: 1023px) {
+    a {
+      flex: 1 1 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
   }
 
   @media screen and (max-width: 768px) {
-    height: 255px; 
+    a {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
   }
 
-  a {
-    display: block;
+  .card {
     width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
+    aspect-ratio: 1 / 1; 
     position: relative;
-    cursor: pointer;
-  }
-
-  .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .card-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.4) 40%,
-      rgba(0, 0, 0, 0.2) 70%,
-      transparent 100%
-    );
-    color: $color-tertiary;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
+    border-radius: 15px;
+    overflow: hidden;
     display: flex;
-    align-items: flex-end;
-    height: 100px; 
-  }
+    flex-direction: column;
+    background-color: #000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  .card-title h2 {
-    margin: 0;
-    font-size: 15px;
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: filter 0.3s ease;
+    }
+
+    &:hover .card-img {
+      filter: brightness(1.05);
+    }
+
+    .card-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      padding: 15px;
+      display: flex;
+      align-items: flex-end;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 0.2) 70%,
+        transparent 100%
+      );
+      color: $color-tertiary;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      box-sizing: border-box;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      h2 {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+    }
   }
 }

@@ -29,14 +29,13 @@ const Logement = () => {
       <Galerie pictures={logement.pictures} title={logement.title}/>
       <Notation rating={parseInt(logement.rating)} />
       <Profil name={logement.host.name} picture={logement.host.picture} />
-
       <Collapse title="Description">
         <p>{logement.description}</p>
       </Collapse>
       <Collapse title="Équipements">
         <ul>
           {logement.equipments.map((equipement) => (
-            <li key={`${logement.id}-${equipement}`}>{equipement}</li>
+            <li key={`${logement.id}_${equipement}`}>{equipement}</li>
           ))}
         </ul>
       </Collapse>

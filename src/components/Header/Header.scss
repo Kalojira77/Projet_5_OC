@@ -1,45 +1,33 @@
-@import '../../styles/variables.scss';
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 45px 100px;
-
-  @media screen and (max-width: 768px) {
-    padding: 20px;
-  }
+  padding-top: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(1rem, 3vw, 2rem);
+  padding-left: 0;
+  padding-right: 0;
 
   .logo {
-    height: 68px;
+    height: clamp(35px, 6vw, 68px);
     width: auto;
-
-    @media screen and (max-width: 768px) {
-      height: 46px;
-    }
   }
 
   .navbar {
     display: flex;
-    gap: 57px;
+    gap: clamp(1rem, 5vw, 3.5rem);
 
-    @media screen and (max-width: 768px) {
-      gap: 20px;
-    }
-
-    // Lien par défaut, visité, actif
     &__link,
     &__link:visited,
     &__link--active,
     &__link--active:visited {
       text-decoration: none;
-      font-size: 24px;
+      font-size: clamp(0.75rem, 2vw, 1.5rem);
       font-weight: 500;
       color: #000;
+      transition: all 0.3s ease;
 
       @media screen and (max-width: 768px) {
-        font-size: 12px;
-        text-transform: uppercase; // MAJUSCULES en mobile
+        text-transform: uppercase;
       }
     }
 

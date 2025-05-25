@@ -1,0 +1,51 @@
+.collapse {
+    // Styles pour le conteneur principal
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 0.2s ease;
+        font-family: "Montserrat", sans-serif;
+        color: #ff6060;
+        background-color: #ff6060;
+
+        &:hover {
+            background-color: #e65555;
+        }
+    }
+
+    &-title {
+        font-weight: 500;
+        color: #333;
+    }
+
+    &-content {
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+
+        &-inner {
+            padding: 0 1rem 1rem 1rem;
+        }
+    }
+}
+
+.arrow-icon {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
+
+    &.open {
+        transform: rotate(180deg);
+    }
+}

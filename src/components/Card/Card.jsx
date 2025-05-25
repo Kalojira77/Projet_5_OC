@@ -4,14 +4,14 @@ import './Card.scss';
 
 const Card = ({ id, title, cover }) => {
   return (
+    <Link to={`/logement/${id}`} aria-label={`Voir le logement : ${title}`}>
     <article className="card">
-      <Link to={`/logement/${id}`} aria-label={`Voir le logement : ${title}`}>
         <img src={cover} alt={`Image du logement : ${title}`} className="card-img" />
         <div className="card-title">
           <h2>{title}</h2>
         </div>
-      </Link>
     </article>
+     </Link>
   );
 };
 

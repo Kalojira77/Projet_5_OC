@@ -1,6 +1,5 @@
-// src/components/Carousel.jsx
 import React, { useState } from 'react';
-// import './Carousel.scss';
+import './Galerie.scss';
 
 const Carousel = ({ pictures, title }) => {
 

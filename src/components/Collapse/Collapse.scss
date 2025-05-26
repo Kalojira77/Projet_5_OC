@@ -1,63 +1,70 @@
+@import '../../styles/variables.scss';
+
 .collapse {
+  font-family: $font-family-base;
   width: 100%;
   margin: 20px 0;
-  font-family: 'Montserrat', sans-serif;
-  color: #ff6060;
+  border-radius: 5px;
+  overflow: hidden;
+}
 
-  &-header {
-    width: 100%;
-    background-color: #ff6060;
-    color: #fff;
-    border: none;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.2rem;
-    border-radius: 5px;
+.collapse-header {
+  background-color: $color-primary;
+  color: $color-tertiary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: #e65555;
-    }
-
-    .collapse-title {
-      font-weight: 500;
-    }
-
-    .arrow-icon {
-      width: 24px;
-      height: 24px;
-      transition: transform 0.3s ease;
-
-      &.open {
-        transform: rotate(-180deg);
-      }
-    }
-  }
-
-  &-content {
-    background-color: #f7f7f7;
-    padding: 15px 20px;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0 0 5px 5px;
-    margin-top: 5px;
-    animation: fadeIn 0.3s ease-in-out;
-
-    &[hidden] {
-      display: none;
-    }
+  &:hover {
+    background-color: darken($color-primary, 5%);
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
+.collapse-title {
+  text-align: left;
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.open {
+  transform: rotate(-180deg);
+}
+
+.collapse-content {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+  background-color: lighten($color-primary, 35%);
+  border-radius: 0 0 5px 5px;
+  color: $color-secondary;
+}
+
+.collapse-content-inner {
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .collapse-header {
+    font-size: 18px;
+    padding: 15px 25px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .collapse-content-inner {
+    font-size: 16px;
+    padding: 25px;
   }
 }

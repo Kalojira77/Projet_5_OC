@@ -1,6 +1,7 @@
 import React from 'react';
 import fullStar from '../../assets/star-full.svg';
 import emptyStar from '../../assets/star-empty.svg';
+import './Notation.scss';
 
 function Rating({ rating }) {
   const stars = [];

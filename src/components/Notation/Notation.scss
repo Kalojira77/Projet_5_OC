@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss';
+
+.rating {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-family: $font-family-base;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .star {
+    width: 24px;
+    height: 24px;
+  }
+}

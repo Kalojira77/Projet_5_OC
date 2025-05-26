@@ -1,0 +1,74 @@
+@import '../../styles/variables.scss';
+
+.logement-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: $font-family-base;
+}
+
+/* Bloc contenant : titre + tags à gauche ET étoiles + hôte à droite */
+.logement-bloc-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    
+    // 👉 ordre naturel : title-tags puis profil-notation
+    .logement-bloc-title-tag {
+      order: 1;
+    }
+
+    .logement-bloc-profil-note {
+      order: 2;
+    }
+  }
+}
+
+
+/* Partie gauche : titre + localisation + tags */
+.logement-bloc-title-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  flex: 1; // prend toute la place dispo à gauche
+}
+
+/* Partie droite : notation + hôte */
+.logement-bloc-profil-note {
+  display: flex;
+  flex-direction: column-reverse; // Profil au-dessus de Notation
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-bottom: 3px;
+
+  @media (max-width: 767px) {
+    flex-direction: row; // Profil à droite des étoiles
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+
+/* Collapse : passe de column à row sur desktop */
+.container-collapse {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  .collapse {
+    flex: 1;
+  }
+}

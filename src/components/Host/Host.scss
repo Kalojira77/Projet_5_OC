@@ -37,4 +37,10 @@
   object-fit: cover;
   border-radius: 50%;
   background-color: lighten($color-secondary, 70%);
+
+    @media (max-width: 768px) {
+     width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
 }

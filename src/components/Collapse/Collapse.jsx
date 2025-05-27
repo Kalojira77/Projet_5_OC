@@ -20,7 +20,7 @@ const Collapse = ({ title, children }) => {
 
       const timer = setTimeout(() => {
         setHeight('auto'); // Pour les contenus qui peuvent changer ensuite
-      }, 300); // durée = celle du CSS
+      }, 600); // durée = celle du CSS
 
       return () => clearTimeout(timer);
     } else if (contentEl) {

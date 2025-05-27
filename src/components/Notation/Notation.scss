@@ -8,13 +8,11 @@
 }
 
 .star {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
-}
 
-@media (min-width: $breakpoint-desktop) {
-  .star {
+  @media (min-width: 768px) {
     width: 24px;
     height: 24px;
   }

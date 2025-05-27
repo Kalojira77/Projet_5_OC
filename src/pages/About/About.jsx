@@ -1,6 +1,7 @@
 import React from 'react';
 import { Banner, Collapse } from '../../components';
 import useFetchAbout from "../../utils/FetchAbout";
+import './About.scss';
 
 const About = () => {
   const { aboutData, isLoading, error } = useFetchAbout();

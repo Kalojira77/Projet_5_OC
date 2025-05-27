@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  height: 60vh; // ✅ prend la hauteur visible du viewport (plus fiable que 100vh sur mobile)
+  box-sizing: border-box;
+
+  font-family: $font-family-base;
+  color: $color-primary;
+
+  &__code {
+    font-size: 13rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__message {
+    font-size: 1.7rem;
+    margin: 0;
+  }
+
+  &__link {
+    color: $color-secondary !important;
+    font-size: 1rem;
+    text-decoration: underline;
+    margin-bottom: 2rem; // 🟢 espace final cohérent
+
+    &:hover {
+      color: darken($color-primary, 50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__code {
+      font-size: 5rem;
+    }
+
+    &__message {
+      font-size: 1rem;
+    }
+
+    &__link {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.line-break-mobile {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline;
+  }
+}

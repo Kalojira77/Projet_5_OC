@@ -1,31 +1,26 @@
 @import '../../styles/variables';
 
 .footer {
-  background-color: $color-secondary; 
+  background-color: $color-secondary;
   color: $color-tertiary;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 0;
+  justify-content: center;
+  padding: 2rem 1rem;
+  gap: 1rem;
   font-size: 0.875rem;
+  text-align: center;
   user-select: none;
 
   .logo-footer {
-    width: 100px;
-    margin-bottom: 0.75rem;
+    width: 120px;
+    height: auto;
   }
 
   p {
     margin: 0;
+    max-width: 200px;
   }
 
-  @media (min-width: $breakpoint-desktop) {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem 4rem;
-
-    .logo-footer {
-      margin-bottom: 0;
-    }
-  }
 }

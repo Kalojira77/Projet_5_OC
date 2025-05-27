@@ -5,7 +5,7 @@
   width: 100%;
   height: 255px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
 
   @media (min-width: $breakpoint-desktop) {
     height: 415px;
@@ -21,7 +21,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .carousel__arrow {

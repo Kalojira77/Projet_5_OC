@@ -1,12 +1,9 @@
-@import '../../style/variables';
+@import '../../styles/variables';
 
 .about {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 
   .loading,
   .error,
@@ -15,10 +12,14 @@
     font-size: 1.125rem;
     color: $color-secondary;
   }
-
   // Responsive spacing
   @media (max-width: $breakpoint-mobile) {
     padding: 1rem 1rem;
     gap: 1.5rem;
   }
+}
+
+.about .collapse {
+  max-width: 1024px; // ajuste selon la maquette
+  margin: 0 auto;   // centre les collapses dans la page
 }

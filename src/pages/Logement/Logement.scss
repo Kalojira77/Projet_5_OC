@@ -3,7 +3,7 @@
 .logement-page {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   font-family: $font-family-base;
 }
 
@@ -13,7 +13,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  gap: 20px;
 
   @media (max-width: 767px) {
     flex-direction: column;
@@ -45,14 +44,12 @@
   flex-direction: column-reverse; // Profil au-dessus de Notation
   align-items: flex-end;
   gap: 10px;
-  flex-shrink: 0;
-  margin-bottom: 3px;
+
 
   @media (max-width: 767px) {
     flex-direction: row; // Profil à droite des étoiles
     justify-content: space-between;
     align-items: center;
-    width: 100%;
   }
 }
 

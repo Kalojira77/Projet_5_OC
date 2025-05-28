@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-
 $font-family-base: 'Montserrat', sans-serif;
 
-// 🎨 Couleurs principales
-$color-primary: #ff6060;
-$color-secondary: #000000;
-$color-tertiary: #ffffff; 
+$color-primary:       #ff6060;
+$color-secondary:     #000000;
+$color-tertiary:      #ffffff;
 
-// 📱 Breakpoints
-$breakpoint-desktop: 1440px;
-$breakpoint-mobile: 375px;
+$color-bg-light:      #ffffff; 
+$color-bg-secondary:  #f6f6f6; 
+
+$breakpoint-mobile:           375px;   
+$breakpoint-tablet:           768px;  
+$breakpoint-small-desktop:    1023px;  
+$breakpoint-desktop:          1440px; 

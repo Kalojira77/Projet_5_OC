@@ -3,26 +3,24 @@
 .title-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  font-family: $font-family-base;
-}
+  gap: 5px; 
+  font-family: $font-family-base; 
 
-.title-container h1 {
-  font-size: clamp(1rem, 3vw, 2rem); // 24px à 36px environ
-  font-weight: 500;
-  color: $color-primary;
-  margin: 0;
-}
+  h1 {
+    font-size: clamp(1rem, 3vw, 2rem); 
+    font-weight: 500; 
+    color: $color-primary; 
+    margin: 0; 
+  }
 
-.title-container p {
-  font-size: clamp(0.9rem, 2vw, 1.125rem); // 16px à 18px
-  font-weight: 400;
-  color: $color-secondary;
-  margin: 0;
-}
+  p {
+    font-size: clamp(0.9rem, 2vw, 1.125rem); 
+    font-weight: 400; 
+    color: $color-secondary; 
+    margin: 0; 
+  }
 
-@media (min-width: $breakpoint-desktop) {
-  .title-container {
-    gap: 10px;
+  @media (min-width: $breakpoint-desktop) {
+    gap: 10px; 
   }
 }

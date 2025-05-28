@@ -4,35 +4,42 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 20px;
-  padding: 50px;
-  background-color: #f6f6f6;
-  border-radius: 25px;
+  gap: 20px; 
+  padding: 50px; 
+  background-color: $color-bg-secondary; 
+  border-radius: 25px; 
 
   a {
-    display: block;
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
-    aspect-ratio: 1 / 1;
     text-decoration: none;
     color: inherit;
+
+    &.card {
+      flex: 1 1 calc(33.333% - 20px);
+      max-width: calc(33.333% - 20px);
+      display: flex; 
+    }
   }
 
   .card {
     width: 100%;
     aspect-ratio: 1 / 1;
     position: relative;
-    display: flex;
+    display: flex; 
     flex-direction: column;
     overflow: hidden;
-    border-radius: 15px;
-    background-color: #000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    > article {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
 
     &:hover {
       transform: scale(1.03);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); 
     }
 
     .card-img {
@@ -52,8 +59,8 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 100px;
-      padding: 15px;
+      height: 100px; 
+      padding: 15px; 
       display: flex;
       align-items: flex-end;
       background: linear-gradient(
@@ -64,12 +71,10 @@
         transparent 100%
       );
       color: $color-tertiary;
-      font-family: 'Montserrat', sans-serif;
+      font-family: $font-family-base;
       font-weight: 700;
-      font-size: 10px;
+      font-size: 10px; 
       box-sizing: border-box;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
 
       h2 {
         margin: 0;
@@ -81,18 +86,18 @@
     }
   }
 
-  @media screen and (max-width: 1023px) {
-    a {
+  @media screen and (max-width: $breakpoint-small-desktop) {
+    a.card {
       flex: 1 1 calc(50% - 20px);
       max-width: calc(50% - 20px);
     }
   }
 
-  @media screen and (max-width: 768px) {
-    a {
+  @media screen and (max-width: $breakpoint-tablet) { 
+    a.card {
       flex: 1 1 100%;
       max-width: 100%;
+      aspect-ratio: 1 / 0.7;
     }
-
   }
 }

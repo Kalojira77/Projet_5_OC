@@ -1,32 +1,32 @@
+@import '../../styles/variables.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: clamp(1rem, 3vw, 2rem);
-  padding-bottom: clamp(1rem, 3vw, 2rem);
-  padding-left: 0;
-  padding-right: 0;
+  font-family: $font-family-base; 
+  padding: clamp(1rem, 3vw, 2rem) 0; 
 
   .logo {
-    height: clamp(35px, 6vw, 68px);
+    height: clamp(35px, 6vw, 68px); 
     width: auto;
   }
 
   .navbar {
     display: flex;
-    gap: clamp(1rem, 5vw, 3.5rem);
+    gap: clamp(1rem, 5vw, 3.5rem); 
 
     &__link,
     &__link:visited,
     &__link--active,
     &__link--active:visited {
       text-decoration: none;
-      font-size: clamp(0.75rem, 2vw, 1.5rem);
-      font-weight: 500;
-      color: #000;
-      transition: all 0.3s ease;
+      font-size: clamp(0.75rem, 2vw, 1.5rem); 
+      font-weight: 500; 
+      color: $color-secondary; 
+      transition: all 0.3s ease; 
 
-      @media screen and (max-width: 768px) {
+      @media (max-width: $breakpoint-tablet) {
         text-transform: uppercase;
       }
     }

@@ -3,44 +3,44 @@
 .host {
   display: flex;
   align-items: center;
-  justify-content: flex-end; // mobile : aligné à droite
-  gap: 20px;
-  font-family: $font-family-base;
+  justify-content: flex-end; 
+  gap: 20px; 
+  font-family: $font-family-base; 
 
-  @media (min-width: 768px) {
-    justify-content: flex-start; // desktop : s'aligne à gauche dans le space-between
+  @media (min-width: $breakpoint-tablet) {
+    justify-content: flex-start; 
   }
 
   @media (max-width: 767px) {
-    flex-direction: row; // mobile : image à droite, nom à gauche
+    flex-direction: row; 
   }
 }
 
 .host-name {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 14px; 
+  font-weight: 500; 
   color: $color-primary;
   text-align: right;
-  max-width: 80px;
+  max-width: 80px; 
   line-height: 1.2;
-  white-space: pre-line; // permet les sauts de ligne avec \n
+  white-space: pre-line; 
 
-  @media (min-width: 768px) {
-    text-align: left; // sur desktop, optionnel selon ton design
+  @media (min-width: $breakpoint-tablet) {
+    text-align: left; 
   }
 }
 
 .host-picture {
-  width: 64px;
-  height: 64px;
-  min-width: 64px; // évite l'écrasement si flex-shrink intervient
+  width: 64px; 
+  height: 64px; 
+  min-width: 64px; 
   object-fit: cover;
   border-radius: 50%;
-  background-color: lighten($color-secondary, 70%);
+  background-color: lighten($color-secondary, 70%); 
 
-    @media (max-width: 768px) {
-     width: 48px;
-    height: 48px;
-    min-width: 48px;
+  @media (max-width: $breakpoint-tablet) {
+    width: 48px; 
+    height: 48px; 
+    min-width: 48px; 
   }
 }

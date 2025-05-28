@@ -1,25 +1,26 @@
-@import '../../styles/variables';
+@import '../../styles/variables.scss';
 
 .about {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.5rem; 
+  font-family: $font-family-base; 
 
   .loading,
   .error,
   .no-data {
     text-align: center;
-    font-size: 1.125rem;
-    color: $color-secondary;
+    font-size: 1.125rem; 
+    color: $color-secondary; 
   }
-  // Responsive spacing
+
   @media (max-width: $breakpoint-mobile) {
-    padding: 1rem 1rem;
-    gap: 1.5rem;
+    padding: 1rem; 
+    gap: 1.5rem;   
   }
 }
 
 .about .collapse {
-  max-width: 1024px; // ajuste selon la maquette
-  margin: 0 auto;   // centre les collapses dans la page
+  max-width: 1024px; 
+  margin: 0 auto;
 }

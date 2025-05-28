@@ -3,7 +3,7 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem; // Espacement entre les tags
+  gap: 0.5rem; 
   padding: 0;
   margin: 0;
   font-family: $font-family-base;
@@ -12,7 +12,7 @@
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  border-radius: 25px; // Tag en forme de pill
+  border-radius: 25px; 
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;

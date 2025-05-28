@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .banner {
   position: relative;
   width: 100%;
@@ -28,6 +30,12 @@
     font-weight: 600;
     font-size: clamp(1.2rem, 4vw, 2.2rem); // Taille fluide liée à la hauteur
     line-height: 1.2;
+    text-shadow:
+      -0.8px -0.8px 0 #000,
+      0.8px -0.8px 0 #000,
+      -0.8px  0.8px 0 #000,
+      0.8px  0.8px 0 #000,
+      2px 3px 5px rgba(0, 0, 0, 0.4); // Ombre douce en bas/droite
 
     .banner-text-left {
       margin-right: 0.5rem;
@@ -40,6 +48,12 @@
       align-items: flex-start;
       flex-direction: column;
       text-align: left;
+      text-shadow:
+      0 0 0 #000,
+      0 0 0 #000,
+      0 0 0 #000,
+      0 0 0 #000,
+      2px 3px 5px rgba(0, 0, 0, 0.4);
     }
   }
 

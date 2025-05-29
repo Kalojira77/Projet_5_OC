@@ -1,6 +1,6 @@
 export async function fetchLogements() {
     try {
-      const response = await fetch('Projet_5_OC/public/data/logements.json');
+      const response = await fetch('data/logements.json');
       if (!response.ok) {
         throw new Error('Erreur lors de la récupération des logements');
       }

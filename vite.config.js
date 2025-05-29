@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/', // ← C'est ça qui corrige le problème GitHub Pages
+  base: '/', 
   plugins: [react()],
   server: {
     watch: {

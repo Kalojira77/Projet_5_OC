@@ -1,4 +1,8 @@
 {
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kalojira77/Projet_5_OC.git"
+  },
   "homepage": "https://kalojira77.github.io/Projet_5_OC/",
 
   "name": "kaza",

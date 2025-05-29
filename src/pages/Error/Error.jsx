@@ -7,9 +7,9 @@ const Error404 = () => {
     <main role="main" className="error">
       <h1 className="error__code">404</h1>
       <p className="error__message">
-  Oups! La page que<span className="line-break-mobile"><br /></span>
-  vous demandez n'existe pas.
-</p>
+        <span>Oups ! La page que</span>
+        <span>vous demandez n'existe pas.</span>
+      </p>
       <Link to="/" className="error__link">
         Retourner sur la page d’accueil
       </Link>

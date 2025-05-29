@@ -1,26 +1,38 @@
+// src/components/Footer/Footer.scss
 @import '../../styles/variables.scss';
 
 .footer {
   background-color: $color-secondary;
   color: $color-tertiary;
-  font-family: $font-family-base; 
+  font-family: $font-family-base;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem; 
-  gap: 1rem;           
-  font-size: 0.875rem; 
+  padding: 2rem 1rem;
+  gap: 1rem;
+  font-size: 0.875rem;
   text-align: center;
-  user-select: none;   
+  user-select: none;
 
   .logo-footer {
-    width: 120px;     
-    height: auto;     
+    width: 120px;
+    height: auto;
   }
 
   p {
     margin: 0;
-    max-width: 200px; 
+
+    // Par défaut, le span reste en inline
+    .footer__line-break {
+      display: inline;
+    }
+  }
+
+  // À moins de 768px : forcer le span à block pour créer une vraie coupure
+  @media (max-width: $breakpoint-tablet) {
+    p .footer__line-break {
+      display: block;
+    }
   }
 }

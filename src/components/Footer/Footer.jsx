@@ -2,6 +2,7 @@ import logoFooter from '../../assets/logo-white.svg';
 import './Footer.scss';
 
 function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer className="footer">
       <img
@@ -9,7 +10,10 @@ function Footer() {
         alt="Kasa logo"
         className="logo-footer"
       />
-      <p>© {new Date().getFullYear()} Kasa. All rights reserved</p>
+      <p>
+        © {year} Kasa. All
+        <span className="footer__line-break"> rights reserved</span>
+      </p>
     </footer>
   );
 }

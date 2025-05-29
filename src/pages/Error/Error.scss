@@ -1,61 +1,42 @@
 @import '../../styles/variables.scss';
 
-// Styles pour le composant Error
 .error {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   align-items: center;
+  justify-items: center;
   text-align: center;
-
-  height: 60vh;                  // ✅ prend la hauteur visible du viewport
-  box-sizing: border-box;
-
-  font-family: $font-family-base; // intégration police globale
-  color: $color-primary;          // intégration couleur primaire
+  height: 62vh;
+  padding: 3rem;
+  font-family: $font-family-base;
+  color: $color-primary;
 
   &__code {
-    font-size: 13rem;            // TODO: extraire en variable typography-scale
-    font-weight: 700;            // TODO: extraire en variable font-weight-bold
+    font-size: clamp(5rem, 20vw, 13rem);
+    font-weight: 700;
     margin: 0;
   }
 
   &__message {
-    font-size: 1.7rem;           // TODO: extraire en variable typography-scale
+    font-size: clamp(1rem, 2.5vw, 1.7rem);
     margin: 0;
+
+    span {
+      display: inline-block;
+    }
+    span + span {
+      margin-left: 0.5ch;
+    }
   }
 
   &__link {
-    color: $color-secondary !important; // intégration couleur secondaire
-    font-size: 1rem;              // TODO: extraire en variable typography-scale
+    color: $color-secondary !important;
+    font-size: clamp(0.95rem, 2vw, 1rem);
     text-decoration: underline;
-    margin-bottom: 2rem;          // 🟢 espace final cohérent, TODO: extraire en variable spacing
+    margin: 0;
 
     &:hover {
-      color: darken($color-primary, 50%); // TODO: variable hover-color ou mixin
+      color: darken($color-primary, 50%);
     }
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    &__code {
-      font-size: 5rem;           // TODO: extraire en variable typography-scale
-    }
-
-    &__message {
-      font-size: 1rem;           // TODO: extraire en variable typography-scale
-    }
-
-    &__link {
-      font-size: 0.95rem;        // TODO: extraire en variable typography-scale
-    }
-  }
-}
-
-// Style utilitaire pour sauts de ligne sur mobile
-.line-break-mobile {
-  display: none;
-
-  @media (max-width: $breakpoint-tablet) {
-    display: inline;
   }
 }

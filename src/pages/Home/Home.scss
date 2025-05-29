@@ -1,28 +1,24 @@
 @import '../../styles/variables.scss';
 
-// Styles pour la page Home
+
 .home {
-  // Container principal des cartes
   .card-container {
-    // Layout
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: 3vw;
-    gap: 30px; // TODO: déplacer vers variable globale si réutilisé
+    gap: 30px; 
     padding: clamp(1rem, 4vw, 50px);
 
-    // Visuel
     background-color: $color-bg-secondary;
   }
 }
 
-// Responsivité
 @media (max-width: $breakpoint-tablet) {
   .home {
     .card-container {
       justify-content: center;
-      gap: 20px; // Adapter si nécessaire
+      gap: 20px; 
     }
   }
 }

@@ -8,7 +8,7 @@ const useFetchAbout = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('data/about.json');
+        const response = await fetch(import.meta.env.BASE_URL + 'data/about.json');
 
         if (!response.ok) {
           throw new Error("Erreur de chargement des données About");

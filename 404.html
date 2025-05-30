@@ -4,14 +4,23 @@
     <meta charset="utf-8"/>
     <title>Page introuvable</title>
     <script>
-      // CHEMIN DEMANDÉ
-      const path = window.location.pathname;
-      // PRÉFIXE (à ajuster si jamais vous changez de repo ou de nom)
-      const base = '/Projet_5_OC/';
-      // ON EXTRAIT la partie après '/Projet_5_OC'
-      const subpath = path.startsWith(base) ? path.slice(base.length - 1) : path;
-      // ON REDIRIGE vers index.html en hashant la route correcte
-      window.location.replace(base + '#' + subpath);
+      (function() {
+        // 1. Votre préfixe GitHub Pages (sans slash final)
+        const base = '/Projet_5_OC';
+        // 2. Le chemin complet demandé
+        const fullPath = window.location.pathname;
+        // 3. On enlève le "base" pour ne garder que la subroute
+        let sub = fullPath.startsWith(base)
+          ? fullPath.slice(base.length)
+          : fullPath;
+        // 4. Assurer un slash au début
+        if (!sub.startsWith('/')) {
+          sub = '/' + sub;
+        }
+        // 5. On redirige vers index.html en hashant la vraie route
+        //    Résultat : "/Projet_5_OC/#/about" ou "/Projet_5_OC/#/logement/123"
+        window.location.replace(base + '/#' + sub);
+      })();
     </script>
   </head>
   <body></body>

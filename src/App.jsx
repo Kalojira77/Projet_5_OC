@@ -12,7 +12,7 @@ function App() {
           <div className="container">
             <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path={import.meta.env.BASE_URL} element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/logement/:id" element={<Logement />} />
             <Route path="*" element={<Error />} />
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

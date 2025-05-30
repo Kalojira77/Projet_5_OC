@@ -8,11 +8,11 @@ function App() {
   return (
     <>
       <LogementProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
           <div className="container">
             <Header />
           <Routes>
-            <Route path={import.meta.env.BASE_URL} element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/logement/:id" element={<Logement />} />
             <Route path="*" element={<Error />} />

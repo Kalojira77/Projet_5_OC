@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirection...</title>
+    <script>
+      (function() {
+        // Doit correspondre au basename utilisé dans BrowserRouter
+        const base = '/Projet_5_OC/';
+        const currentPath = window.location.pathname;
+
+        // On retire le "base" pour ne garder que la sous-route
+        let route = currentPath.startsWith(base)
+          ? currentPath.slice(base.length)
+          : currentPath;
+
+        // S'assurer que le chemin commence par /
+        if (!route.startsWith('/')) {
+          route = '/' + route;
+        }
+
+        // Redirige vers l'entrée SPA avec hash routing
+        window.location.replace(`${base}/#${route}`);
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>JavaScript requis pour rediriger vers l'application.</noscript>
+  </body>
+</html>

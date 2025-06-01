@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <meta charset="utf-8"/>
-    <title>Page introuvable</title>
+    <meta charset="utf-8" />
+    <title>Redirection...</title>
     <script>
       (function() {
-        // 1. Votre préfixe GitHub Pages (sans slash final)
+        // Doit correspondre au basename utilisé dans BrowserRouter
         const base = '/Projet_5_OC';
-        // 2. Le chemin complet demandé
-        const fullPath = window.location.pathname;
-        // 3. On enlève le "base" pour ne garder que la subroute
-        let sub = fullPath.startsWith(base)
-          ? fullPath.slice(base.length)
-          : fullPath;
-        // 4. Assurer un slash au début
-        if (!sub.startsWith('/')) {
-          sub = '/' + sub;
+        const currentPath = window.location.pathname;
+
+        // On retire le "base" pour ne garder que la sous-route
+        let route = currentPath.startsWith(base)
+          ? currentPath.slice(base.length)
+          : currentPath;
+
+        // S'assurer que le chemin commence par /
+        if (!route.startsWith('/')) {
+          route = '/' + route;
         }
-        // 5. On redirige vers index.html en hashant la vraie route
-        //    Résultat : "/Projet_5_OC/#/about" ou "/Projet_5_OC/#/logement/123"
-        window.location.replace(base + '/#' + sub);
+
+        // Redirige vers l'entrée SPA avec hash routing
+        window.location.replace(`${base}/#${route}`);
       })();
     </script>
   </head>
-  <body></body>
+  <body>
+    <noscript>JavaScript requis pour rediriger vers l'application.</noscript>
+  </body>
 </html>
